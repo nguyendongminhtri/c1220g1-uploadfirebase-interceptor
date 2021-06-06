@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <form class="create-song-form" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
+                    <mat-error class="alert alert-primary">{{status}}</mat-error>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Name Song</mat-label>
+                        <input name="nameSong" matInput [(ngModel)]="form.nameSong" #nameSong="ngModel" required>
+                        <mat-icon color="accent" matSuffix>music_video</mat-icon>
+                        <mat-error *ngIf="nameSong.hasError('required')">The name Song is required!</mat-error>
+                    </mat-form-field><br>
+                    <mat-form-field style="width: 350px" appearance="fill">
+                        <mat-label>Lyrics</mat-label>
+                        <textarea name="lyrics" matInput [(ngModel)]="form.lyrics" #lyrics="ngModel" required></textarea>
+                        <mat-icon color="accent" matSuffix>queue_music</mat-icon>
+                        <mat-error *ngIf="lyrics.hasError('required')">The lyrics is required!</mat-error>
+                    </mat-form-field><br>
+                    <app-upload-avatar (giveURLtoCreate)="onChangeAvatar($event)"></app-upload-avatar>
+                    <app-upload-file (giveURLtoCreate)="onChangeFile($event)"></app-upload-file>
+                    <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-success"><mat-icon color="accent" matPrefix>trending_flat</mat-icon>Create Song
+
+                    </button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

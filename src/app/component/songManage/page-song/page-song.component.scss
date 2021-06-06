@@ -1,0 +1,48 @@
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 10px 10px;
+
+}
+.card {
+  box-shadow: 0 0px 0px 0 rgba(1, 1, 1, 0.5);
+  padding: 50px;
+  text-align: center;
+  background-color: cornsilk;
+
+}
+/*CSS Reponsive */
+div.card{
+  padding: 10px;
+}
+
+@media screen and (min-width: 601px) {
+  div.card {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.card {
+    font-size: 10px;
+  }
+}
+
+/* Remove extra left and right margins, due to padding */
+//.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+//.row:after {
+//
+//  content: "";
+//  display: table;
+//  clear: both;
+//}
+.img{
+  width: auto;
+  height: 100px;
+  border-top-left-radius: 8% 8%;
+  border-top-right-radius: 8% 8%;
+  border-bottom-right-radius: 8% 8%;
+  border-bottom-left-radius: 8% 8%;
+}
